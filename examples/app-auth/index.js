@@ -34,24 +34,52 @@ Set up Express and the Box SDK
  }
  });*/
 
+/*{
+ "boxAppSettings": {
+ "clientID": "zjnyu56jkre6pmpva2l1sqrrjtyqfktq",
+ "clientSecret": "PJOG2jAFw8ZlKs46yzNCDCAvwa0JxAnM",
+ "appAuth": {
+ "publicKeyID": "iv5wko9e",
+ "privateKey": "-----BEGIN ENCRYPTED PRIVATE KEY-----\nMIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIcFmlAuc0aa0CAggA\nMBQGCCqGSIb3DQMHBAgfwwTmuTGPBwSCBMg4pAP15NId2UYkuR3lqoySr8JRsjrE\nyN/qX4tyxT4BYJ43PFwy4ueLYYpMG93ISND5HM/mtS6hf0MNVQFIRMY5e903egcX\nCqHVoD0x49mpv0r39oP+gzPOzdP73YqxTmm0pc45ltSlkCRx97oQcGg/MPnbyqtJ\neZe+CVPxr7N1h7w6amWii3CQ2efIZ905fRwBXH9koOL3LZK6GncD4yi5u0O732TN\nnUrNRwitTOVNesN+rFSMJ56IxZrreEiV5C16DqxsZHjqFER7eRwu6/q/sLNBKshO\nJvBTFvQMiusWW0poB2cbmg66ORtPvhuqzoeLt0sexTHJgh/6z6t1h8xTKJ9+zqFD\n9o3k1XVOkSHKsqTlt5JEGaK+BXZfoJ5wsa1CP5h4KV5N1mpBzgcdyo6V7SEJAGWm\nCsa9pFu0pXJJZJlGPirDsm/i8uEnXi4u5u3zEul/vlQwtU8VlbD2CdUMlVqpfaYX\n2SWGpLgp2SI0LKnq9ef4YEnSzVdm73GyJa+uNGK+VF6qtfh9KpzN7rB2uCfkqogG\nkUwah11PN7JG1Lewp1Lj4TxIJoZscWYdwv5DG8x/rn4CspeNa3eDuQ6gLpJdF5DO\n1cxvgC+YGLa6aEjQErkYSzjXK+W5IYAsgaGb3OJAzgVyEnWqeMUvM550K6x61Dx2\nWHf4vJPurjdDrebVhvZUq+F1WhVYi6kiugPCmIR5rJ+TBcQf1bOH9mOYjq2Axj8p\ncCnk0CNCn5cxt6gBppVyQiUzVIY50ZHcvuYdPI/rHn1+0yqyfMpkhbcxuHmNs5CL\nJhsoWSVD41nivDGq/iKB4EuxT0OuqSo6NsVZi380nHVtagYdSpivBdR84H1UbmPX\nzQxVyuEL9S4cMFFMma21wIizCofF1NHRCviNaSBDmkhxuoqCuFe+rHS48EnApIiB\nufDCg2lCl+X/oyJcUhSFfIo9wu52c98tt0VVuSdk3UEhWiMpjXXBTswNayJk3cYe\nsIcx50xGpC+7zWQCQeUwTe+q3M1uRJY1nQIXEoiqhb/E69UBJCbfcUSyOXj7EExC\ncSYVAfSN3MIG8Bgh/Jy0hqe/eyp8imsAIr8euc/tUZlqZV1T5qQtDy6EBVl4ct38\nXHrH1qt/c7FSLh6JJNOvDqaqecnAiBBvgO+hesZU4Rku6ke0sS3ek4KLogiH3LP4\n6d+8axDhF4/mCpURd5foaP64SEcOJg9GX5MjB0aL4XAH58HpEFPhb+PC3F3A78zw\noKYSbU1te/OLwc5gfsa1XJkSKbMcnRGYjs6RJpVQLpB3M5DrjBmd2dbd0uZfIGkK\nYbGygRM7oUZAmwXlo2pz0zTk9uKwXMXFjoXmTdVj+QgtBqLuG5x+EsGRUaDzIBGH\njXshqVe/8NtI87Mxw/YrpmAtseUO7Y/JdZUW+6Exoh4F7F3dPXE8p9ZcoeRu01bW\nOlAaClJl3ELbuymN0etYSf7B/DoPWnBNuNFbnaD9+DZ1r/iuJ3hsI/hWsLWf0ML1\nj6qrs5TepJzI4yxYeSv0xz0jhAvtTUJvvoTo0RkbQHCVutqQk483ZlOs7G0RL4fO\nd9bVnJT5FoJ4DaDBcRPw1d994Yvoa5rhnkpv4ReoPN9YGfC/rcwAZUTx0FcKxE4X\nNhI=\n-----END ENCRYPTED PRIVATE KEY-----\n",
+ "passphrase": "19f725b523c6fd33132d7a179b8629ca"
+ }
+ },
+ "enterpriseID": "23593372"
+ }*/
+
 
 var CLIENT_ID = 'zjnyu56jkre6pmpva2l1sqrrjtyqfktq',
 	CLIENT_SECRET = 'PJOG2jAFw8ZlKs46yzNCDCAvwa0JxAnM',
-	PUBLIC_KEY_ID = 'pwgcmlf1',
-	//PRIVATE_KEY_PATH = 'private_key.pem',                                            pathway to a .pem file i cruduely created, now hardcoded below instead
-	ENTERPRISE_ID = '23593372';
+	PUBLIC_KEY_ID = 'iv5wko9e',
+	PRIVATE_KEY_PATH = 'private_key.pem',                                            //pathway to a .pem file i cruduely created, now hardcoded below instead
+	ENTERPRISE_ID = '23593372',
+	PASSPHRASE = '19f725b523c6fd33132d7a179b8629ca';
 
 // Set up Express and the Box SDK
 var app = express(),
 	sdk = new BoxSDK({
-		clientID: 'zjnyu56jkre6pmpva2l1sqrrjtyqfktq',
-		clientSecret: 'PJOG2jAFw8ZlKs46yzNCDCAvwa0JxAnM',
+		clientID: CLIENT_ID,
+		clientSecret: CLIENT_SECRET,
 		appAuth: {
-			keyID: 'pwgcmlf1',
-			privateKey: '-----BEGIN ENCRYPTED PRIVATE KEY-----MIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQI0pgBe6JZUTwCAggAMBQGCCqGSIb3DQMHBAjKBzGKhbf1xQSCBMhhwz4PSNVibq2CmwnN780GHzEMjHy4c/ArDkL4/2KkIt2ENCdR2GEWb2bXDk8cxcKllxgfF3uLid8/h8lkiO7/z3vCaBgr1vILg6H3W4775h7jQT1axmUKJduq6tzlQC3GNrXBI4Hd3OZMDAy1WsLTr9HEbZQ91caIfSpn/FvJAeFur8iaZOmHFQzuXsPrrM6cQBQnycUbNaLLjSkdcNa8ybbEPtpHDA5EVmq51UVBRH//9U1V1rEkwX3kG4ydSRWRokjJ6H2IoN4JUGazwAPdubnoFNwhYc0mFnexg7nPtZp90711+gu1P8paq2/4V5+5pkO0xhVE3TkSOz5dx6YQ7MMFv3vXG/gr9vRiZYplYOu8Hn0PgxHDC1yEQ0HGzJXZtRmL1jvKJYHUgWYk065RKlz0giywWdxEYbS1J2ioH97hjFjwbyuQNFsEnLXOlwuZp7/91zZiaGzHQlmDl4mBmNyTySSUBB6HqE0ulUXq/IEmkl66RmZsCHWEyAjYhURMvmjhYlhYu5Z3pJOHEDsWZACQjzx9Q9YKsk4F6w7EIKQkqVuc/R84PsY4RLUzs5oQ8W2t6uraDpC0TXYzhfzejiUTcser4tGEXLFGzGB5elDqaheij4gFM6rLpwle3cxvZ5PwTnKWAtyOfiIe41OF6FhX7XevdCgB3WuqY13YVu7/r/3Kn9h9ruM4BMawI2GaAs8ia9WewT6eSZGGbk7QJkVvR9vE7LwlKFai0Mfu9bFJ0QnoXUlSNhVsXd8mZLrq7mPPwI88IrPaRKTSHHTksvVTlGYZBtRLdK45eJpBy9oph6pz6bOm5ujcGYU0C2CAzlXgjtRc6XoGuu46PlA4roRaG4oIhk1S6N/hjJ7lNqmu5kB35R9r9HX3pEOfI2TPcqrn2CCePkd6e/NBJWWlEBuGdSBq/NjqUyiEu3cICcAo2vJt3DCq0wrAl3eiWTK1ozlKETRaXQwAYHeCtBTeFyDfFB3wf72Y9BKUNPXBAKPA8J2i573YCCHxJK18MBsjWKPII45vIrM56VKGc4t3Te5MqU9NoKXwtKyQ8J9dzaLWgbbAPsnGZ20G86n3KKNMA5ZdNtM5LrGy/9+PM7no92ey5IJwYwAN5dZ1WDdEkoyskrUUiub5ukrGZmZ6SU6Il2f6nkLXpliaUg8ql8p/u/Y3hqmMghIuw/IaQZftNyQ266sV5Tt2MMObPNoiHvVe3XSoSmGMLBe7063CqJ0ZyJPzle85OOYE0p1lCsjBAl3gQtt1AE0VCCdJiscPhtnbBNMNS7O158j1c9zwZVZNsvqnfbKMN4vbKRv4NRZnbM3EolGCOj7J7S6oHi5IjrDncUn3hngTdZwgLayslgf0Pq1UJhmo6O2sAbysTbAnJ2Mc7r03Mj9oej9unqfnx/0FxSCPAQQgBl0vqU2DJ3V6gQEkne38SpgV5pnZR6CCM9lmpoygx9xVsNwxfo/AN09hIfdcCMAmc9GK2Xk8wooc8lWWeGKSC7nBtXX9KKDCF4X8rSwPMeVQQOqjfh53dpPWC9bRgo0oMA02G2/tpN19tcodFLslK3nyXmTjH549N9Irj837Nvxo/7IwVDlk4y6Rf2ltj6XMdpr2b8=-----END ENCRYPTED PRIVATE KEY-----',
-			passphrase: '2b9ce20fb9c73dfef059581787ee2905'
+			keyID: PUBLIC_KEY_ID,
+			privateKey: fs.readFileSync(path.resolve(__dirname, PRIVATE_KEY_PATH)),
+			passphrase: PASSPHRASE
 		}
 	});
+
+var client = sdk.getBasicClient('j3saHRpppC7N0b485ujrwVAyxHSnDhJW');
+
+function callback() {}
+
+client.webhooks.create(
+	'32961135730',
+	client.itemTypes.FOLDER,
+	'https://openwhisk.ng.bluemix.net/api/v1/namespaces/AAAComms.com_AAAComms/actions/FFmpeg',
+	[
+		client.webhooks.triggerTypes.FILE.UPLOADED
+	],
+	callback
+);
 
 // Use a single SDK client for the app admin, which will perform all operations
 // around user management
